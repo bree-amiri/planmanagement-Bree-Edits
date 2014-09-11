@@ -1,0 +1,326 @@
+<html>
+<head>
+  <link type="text/css" rel="stylesheet" href="style.css">
+  <link type="text/css" rel="stylesheet" href="vendor/jquery.sidr/stylesheets/jquery.sidr.dark.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.1.0/fabric.all.min.js" ></script>
+  <script src="vendor/jquery.sidr/jquery.sidr.min.js" ></script>
+
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  
+       <script>
+            // show the given page, hide the rest
+            function show(elementID) {
+                // try to find the requested page and alert if it's not found
+                var ele = document.getElementById(elementID);
+                if (!ele) {
+                    alert("no such element");
+                    return;
+                }
+
+                // get all pages, loop through them and hide them
+                var pages = document.getElementsByClassName('page');
+                for(var i = 0; i < pages.length; i++) {
+                    pages[i].style.display = 'none';
+                }
+
+                // then show the requested page
+                ele.style.display = 'block';
+            }
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+<!--cutted bree qqq-->
+
+  
+   <div id="plan-page" class="page" >
+<div id="menubar">
+	  <div class="page-button"  >
+            <li onclick="show('plan-page');">Plan View</li>
+            <li onclick="show('boundary-page');">Boundary View</li>
+            <li onclick="show('Structure-page');">Construction View</li>
+        </div>
+<div class="leftnav" id="planInfo">
+  <div class="new">
+    <h3 style="margin:5px;display:inline-block;">  Plan Info.  </h3>
+ 
+ 
+ <!-- Bree, Start-->
+ <div id="info" style="display:inline-block;" >
+ 
+      <!-- Hide from Here -->
+     <li> <label><strong>Site:</strong></label>   
+      <label>site No</label></li>
+    
+     <li> <label>Area:</label>
+      <label>Area No</label></li>
+      
+     <li> <label>Plan:</label>
+       <label>DP123456</label> </li>
+
+     <li> <label>Azimuth:</label>
+      <label>Azimuth</label> </li>
+ <input class="buttons" id="edit-info" type="button" value="Edit">
+ <input class="buttons" id="new-info" type="button" value="New">
+
+        </div>
+    <div class="form" id="update-info" style="display:inline-block;">
+      <!-- Hide from Here -->
+      <label>Site:</label>
+      <input type="text" name="site" value="Site">
+      
+      <label>Area:</label>
+      <input type="text" name="area" value="Area"> 
+      
+      <label>Plan:</label>
+      <input type="text" name="area" value="DP123456"> 
+
+      <label>Plan Title:</label>
+      <input type="text" name="plan" value="Plan Name">
+     
+      <label>Plan ID:</label>
+      <input type="text" name="planid" value="DP123456">
+      
+      <label>Azimuth:</label>
+      <input style="width:50px;" type="text" name="azimuth" value="G">
+     
+      <small>{{Other fields to go here}}</small>
+
+      <input class="buttons" id="update-details" type="button" name="planfile" value="Update Details">
+      <!-- to here -->
+    </div>
+     
+  </div>
+   </div>
+  
+  
+  <a class="righttoggle" style="float:right;margin-top:8px;margin-right:10px;" href="#">Page 1/4 <i class="fa fa-chevron-right"></i><i class="fa fa-chevron-right"></i></a>
+</div>
+
+ <!-- Bree, end-->
+
+
+<div id="toolbar" style="display:block;">
+   <div class="menu-item"><button class="toggleable" id="arrow"><img src="images/cursor.png" height="30"><label>Arrow</label></button></div>
+     <div class="menu-item"><button class="toggleable" id="assignPoint"><img src="images/point.png" height="30"> <label>Asgn</label></button></div>
+
+   <div class="divider">&nbsp;</div>
+   Add:<br>
+ <div class="menu-item"><button class="toggleable" id="add-dp"><img src="images/pdf.png" style="width:25px" style><label>DP</label></button></div>
+     <div class="menu-item"><button class="toggleable active" id="add-Point"><img src="images/point.png" height="30"> <label>Point</label></button></div>
+  <div class="menu-item"><button class="toggleable" id="add-boundary"><img src="images/boundary.png" height="30"><label>Parcel</label></button> </div>
+  <div class="menu-item"><button class="toggleable" id="advline"><img src="images/line.png" height="30"><label>Pline</label></button> </div>
+   <div class="menu-item"><button class="toggleable" id="add-text"><img src="images/text.png" height="30"><label>Text</label></button></div>
+  <div class="divider">&nbsp;</div>
+  Connect As:<br>
+  <div class="menu-item"><button class="toggleable" id="convertToLine"><img src="images/line.png" height="30"><label>Line</label></button></div>
+  <div class="menu-item"><button class="toggleable" id="convertToCurve"><img src="images/curve.png" height="30"><label>Curve</label></button></div>
+  <div class="menu-item"><button class="toggleable" id="convertRadiusLine"><img src="images/radline.png" height="30"><label>None</label></button></div>
+
+  <div class="divider">&nbsp;</div>
+  
+  
+  <!--bree added--->
+   Connect As:<br>
+  <div class="menu-item"><button class="toggleable" id="offset"><img src="images/line.png" height="30"><label>Line</label></button></div>
+ 
+  <div class="menu-item"><button class="toggleable" id="convertRadiusLine"><img src="images/radline.png" height="30"><label>None</label></button></div>
+
+  <div class="divider">&nbsp;</div>
+  
+  
+  
+  
+  
+  
+  
+  
+  Convert To:<br>
+  <div class="menu-item"><button class="toggleable" id="convertEasment"><img src="images/easement.png" height="30"><label>Emnt</label></button></div>
+  <div class="menu-item"><button class="toggleable" id="convertDrillPoint"><img src="images/arrow.png" height="30"><label>DH&W</label></button></div>
+ 
+  <div class="menu-item"><button class="toggleable" id="convertSSM"><img src="images/ssm.png" height="30"><label>SSM</label></button></div>
+
+ 
+  <div class="divider">&nbsp;</div>
+
+   <div class="menu-item"><input class="toggleable" id="showhide" type="button" value="Hide All" data-mode="hide"><label>Arrow</label></div>
+
+  <div class="divider">&nbsp;</div>
+
+  <div class="menu-item"><input class="toggleable" id="remove" type="button" value="Remove"><label>Arrow</label> </div>
+  <div class="menu-item"><input class="toggleable" id="clear" type="button" value="Clear canvas"><label>Arrow</label> </div>
+ <div class="menu-item"> <input class="toggleable" id="save" type="button" value="Show Save Format"><label>Arrow</label> </div>
+</div>
+
+<div class="rightnav" style="display:none;">
+  <h1>Page 1/4</h1>
+
+  <img class="modified" src="plans.jpg" width="120px">
+  <img src="plans.jpg" width="120px">
+  <img src="plans.jpg" width="120px">
+  <img class="modified" src="plans.jpg" width="120px">
+</div>
+
+<div id="savediv"></div>
+
+<canvas id="c" width="1789" height="1245" style="border:1px solid #ccc"></canvas>
+<script src="site.js"></script>
+
+<script>
+  $(document).ready(function() {
+    $('.lefttoggle').sidr({
+      name: 'sidr-existing-content-left',
+      source: '.leftnav'
+    });
+
+    $('.righttoggle').sidr({
+      name: 'sidr-existing-content-right',
+      source: '.rightnav',
+      side:'right'
+    });
+  })
+</script>
+
+
+<!-- Begin Bree
+	This form is for creating a new job -->
+
+         <div class="form" id="new-job" style="position:absolute;">
+      <!-- Hide from Here -->
+     <div> <label>Site:</label><input type="text" name="site" value="Site"></div> 
+      
+     <div>  <label>Area:</label><input type="text" name="area" value="Area"> </div>
+      
+     <div >  <select  id="job-type" name="Job-Type">
+  				<option value="DP" selected>Deposited Plan</option>
+ 				<option value="SP">Strata Plan</option>
+ 				<option value="P">Preliminary Deposited Plan</option>
+ 				<option value="I">Interim, Not Lodged</option>
+ 				<option value="Plan Catalog No.">Conty, Parish and Partion</option>
+ 				<option value="Town">Town and Section</option>
+			</select></div><br />
+				
+	<div  id="interim-div"><label id="interim">Interim Id</label> <input type="text" name="interim" value=""> </div>
+ 	 	
+	
+	 	<div id="dp" ><label  id="dp-label">DP</label> <input type="text" name="area" value="DP123456"> </div>
+        <div id="sec"> <label class="dp-sec" >Section</label> <input type="text" name="section" value="Section"></div>
+    
+      <div><label>LGA</label> <input type="text" name="LGA" value=""></div>
+  
+ 	 <div><label>Locality </label><input type="text" name="locality" value=""></div> 
+      
+       <div><label>Parish</label><input type="text" name="parish" value=""></div>
+      
+        <div><label>County</label><input type="text" name="county" value=""></div>
+   
+              <div><label>Azimuth</label><input type="text" name="az" value=""></div>
+<br />
+
+      <div > <input type="button" name="planfile" value="Create"> </div>
+       <div id="new-cancel"> <input type="button" name="planfile" value="Cancel"> </div>
+      <!-- to here -->
+    </div>
+  
+ <!-- End Bree--> 
+<div id="footer">
+    	<div id="menu-text" class="sub-menu">
+          <a class="lefttoggle" href="#"><i class="fa fa-chevron-left"></i><i class="fa fa-chevron-left"></i></a>
+          Tools:
+          <input class="buttons" id="text-input" type="button" value="Text">
+           Text: <input id="text" name="text" type="text" size="40" value="Insert Text"> <input id="size" name="size" type="hidden" size="3" value="18">
+           <!--Color: <input id="color" name="color" type="text" size="7" value="#000000"-->
+
+           <span class="changeLabel" style="display:none;">
+          <div class="divider">&nbsp;</div>
+          Label: <input id="label_text" name="text" type="text" size="40">
+          <input id="applyLabel" type="button" value="Apply">
+          </span>
+
+          Increment Value: <input id="increment" name="increment" type="text" size="5" value="1">
+
+         <!--input id="save" type="button">Save canvas to localstorage</button>
+         <input id="load" type="button">Load canvas from localstorage</button>
+         <input id="delete" type="button">Remove backup file from localstorage</button -->
+       </div>
+
+       <div id="menu-dp" class="sub-menu">
+	     <label> Plan File</label>
+         <input type="file" name="planfile">
+         <label> Plan Id</label> 
+         <input id="plan-id" name="text" type="text" size="40" placeholder="Plan ID"> 
+       </div>
+
+       <div id="menu-bd" class="sub-menu">
+          <li>
+            <label> || Distance</label>
+            <input type="text" name="bearing" value="">
+            <div id="units-single">m</div>
+             <button class="buttons" id="end-boundary">End</button></li> 
+ 	      <li>
+ 	       <label>|| Bearing</label>
+           <input type="text" name="bearing" value="">
+           <input  id="rotate-single" type="text" name="bearing"  placeholder="Rotation"></li>
+            <li>
+ 	       <label>After Point</label>
+           <input type="text" name="first-point" value="" style="width:40px;">
+           </li>
+      </div>
+        <div id="menu-parcel" class="sub-menu">
+          <label> Parcel No.</label>
+            <input type="text" name="parcelno" value="">
+          <label> Point No.</label>
+           <input id="first-point" style= "width:40px;"type="text" name="point No." value="">
+          <div class="rising"> 
+          	<li>Points:</li>
+          	</div>
+            <label class="buttons">Pns</label>
+ 	       
+      </div>
+     
+ </div>
+ 
+ </div>
+<div id="boundary-page" class="page" style="display:none">
+       <div class="page-button"  >
+            <li onclick="show('plan-page');">Plan View</li>
+            <li onclick="show('boundary-page');">Boundary View</li>
+            <li onclick="show('Structure-page');">Construction View</li>
+        </div>
+        <img src="images/Lot.png">
+    </div>
+    <div id="Structure-page" class="page" style="display:none">
+     <div class="page-button"  >
+            <li onclick="show('plan-page');">Plan View</li>
+            <li onclick="show('boundary-page');">Boundary View</li>
+            <li onclick="show('Structure-page');">Construction View</li>
+             
+        </div>
+        <img src="images/Struc.png">
+    </div>
+
+
+</body>
+</html>
